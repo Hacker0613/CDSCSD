@@ -1,0 +1,137 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    background-color: #000;
+}
+
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    background: transparent;
+    background-size: 400%;
+    transition: 1s;
+}
+
+.tab {
+    /* Ваши существующие стили */
+    position: relative;
+    /* Добавляем позиционирование */
+}
+
+.tab::after {
+    content: '';
+    /* Создаем псевдоэлемент */
+    position: absolute;
+    /* Позиционируем псевдоэлемент абсолютно */
+    bottom: 0;
+    /* Располагаем псевдоэлемент внизу */
+    left: 0;
+    /* Располагаем псевдоэлемент слева */
+    width: 0;
+    /* Устанавливаем начальную ширину в 0 */
+    height: 2px;
+    /* Устанавливаем толщину линии */
+    background-color: #fff;
+    /* Цвет линии */
+    transition: width 0.8s ease;
+    /* Добавляем плавный переход */
+}
+
+.tab.active::after {
+    width: 100%;
+    /* Увеличиваем ширину до 100% при активации */
+}
+
+h1 {
+    text-align: center;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-item {
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.product-item img {
+    max-width: 250px;
+    margin-right: 50px;
+}
+
+.product-item h2 {
+    margin: 0;
+}
+
+/*Кнопка*/
+.product-item .product-id {
+    font-weight: bold;
+}
+
+.buy-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.buy-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+    .tab {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .product-item img {
+        max-width: 100%;
+        margin-right: 20px;
+    }
+    .buy-btn {
+        margin-left: 10px;
+    }
+}
